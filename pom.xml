@@ -136,7 +136,7 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <projectName>TeamApps Icons8 Flat Color Icon Provider</projectName>
+                            <projectName>TeamApps Flags Icon Provider</projectName>
                             <organizationName>TeamApps.org</organizationName>
                             <inceptionYear>2014</inceptionYear>
                             <licenseName>apache_v2</licenseName>

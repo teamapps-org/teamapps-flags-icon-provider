@@ -1,6 +1,6 @@
 /*-
  * ========================LICENSE_START=================================
- * TeamApps Icons8 Flat Color Icon Provider
+ * TeamApps Flags Icon Provider
  * ---
  * Copyright (C) 2014 - 2019 TeamApps.org
  * ---
