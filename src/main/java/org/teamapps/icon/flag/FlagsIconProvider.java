@@ -17,7 +17,7 @@
  * limitations under the License.
  * =========================LICENSE_END==================================
  */
-package org.teamapps.icon.icon8;
+package org.teamapps.icon.flag;
 
 import org.apache.commons.io.IOUtils;
 import org.teamapps.icons.api.IconStyle;
