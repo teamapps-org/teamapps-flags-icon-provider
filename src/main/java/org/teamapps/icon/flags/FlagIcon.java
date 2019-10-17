@@ -21,6 +21,9 @@ package org.teamapps.icon.flags;
 
 import org.teamapps.icons.api.SimpleIcon;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public enum FlagIcon implements SimpleIcon {
 
 	AD_ANDORRA("ad.svg"),
@@ -282,6 +285,24 @@ public enum FlagIcon implements SimpleIcon {
 	ZW_ZIMBABWE("zw.svg"),
 
 	;
+	private static Map<String, FlagIcon> iconByName = new HashMap<>();
+	private static Map<String, FlagIcon> iconByCountryCode = new HashMap<>();
+
+	static {
+		for (FlagIcon flagIcon : values()) {
+			iconByName.put(flagIcon.getIconName(), flagIcon);
+			String countryCode = flagIcon.name().substring(0, 2);
+			iconByCountryCode.put(countryCode, flagIcon);
+		}
+	}
+
+	public static FlagIcon getByNameOrNull(String name) {
+		return iconByName.get(name);
+	}
+
+	public static FlagIcon getByCountryCode(String name) {
+		return iconByCountryCode.get(name);
+	}
 
 	private String iconName;
 
