@@ -299,8 +299,7 @@ public class FlagIcon implements Icon<FlagIcon, Void> {
 	private static FlagIcon createInternal(String iconName) {
 		FlagIcon icon = new FlagIcon(iconName);
 		iconByName.put(iconName, icon);
-		String countryCode = icon.iconName.substring(0, icon.iconName.lastIndexOf('.'));
-		iconByCountryCode.put(countryCode, icon);
+		iconByCountryCode.put(icon.getCountryCode(), icon);
 		return icon;
 	}
 
@@ -317,13 +316,19 @@ public class FlagIcon implements Icon<FlagIcon, Void> {
 	}
 
 	private String iconName;
+	private String countryCode;
 
 	FlagIcon(String iconName) {
 		this.iconName = iconName;
+		this.countryCode = iconName.substring(0, iconName.lastIndexOf('.'));
 	}
 
 	public String getIconName() {
 		return iconName;
+	}
+
+	public String getCountryCode() {
+		return countryCode;
 	}
 
 	@Override

@@ -1,11 +1,20 @@
 package org.teamapps.icon.flags;
 
-import junit.framework.TestCase;
 import org.junit.Assert;
+import org.junit.Test;
 
-public class FlagIconTest extends TestCase {
+public class FlagIconTest {
 
+	@Test
 	public void testGetByCountryCode() {
 		Assert.assertEquals(FlagIcon.GB_ENG, FlagIcon.getByCountryCode("gb-eng"));
 	}
+
+	@Test
+	public void getCountryCode() throws Exception {
+		Assert.assertEquals("gb-eng", FlagIcon.GB_ENG.getCountryCode());
+		Assert.assertEquals("de", FlagIcon.DE_GERMANY.getCountryCode());
+	}
+
+
 }
