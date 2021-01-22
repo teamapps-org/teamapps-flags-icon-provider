@@ -22,6 +22,7 @@ package org.teamapps.icon.flags;
 import org.teamapps.icons.Icon;
 import org.teamapps.icons.spi.IconLibrary;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,8 +35,8 @@ import java.util.Map;
 )
 public class FlagIcon implements Icon<FlagIcon, Void> {
 
-	private static Map<String, FlagIcon> iconByName = new HashMap<>();
-	private static Map<String, FlagIcon> iconByCountryCode = new HashMap<>();
+	private static final Map<String, FlagIcon> iconByName = new HashMap<>();
+	private static final Map<String, FlagIcon> iconByCountryCode = new HashMap<>();
 
 	public static final FlagIcon AD_ANDORRA = createInternal("ad.svg");
 	public static final FlagIcon AE_UNITED_ARAB_EMIRATES = createInternal("ae.svg");
@@ -298,7 +299,7 @@ public class FlagIcon implements Icon<FlagIcon, Void> {
 	private static FlagIcon createInternal(String iconName) {
 		FlagIcon icon = new FlagIcon(iconName);
 		iconByName.put(iconName, icon);
-		String countryCode = icon.iconName.substring(0, 2);
+		String countryCode = icon.iconName.substring(0, icon.iconName.lastIndexOf('.'));
 		iconByCountryCode.put(countryCode, icon);
 		return icon;
 	}
@@ -309,6 +310,10 @@ public class FlagIcon implements Icon<FlagIcon, Void> {
 
 	public static FlagIcon getByCountryCode(String name) {
 		return iconByCountryCode.get(name);
+	}
+
+	public static Collection<FlagIcon> values() {
+		return iconByCountryCode.values();
 	}
 
 	private String iconName;
