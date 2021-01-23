@@ -16,5 +16,10 @@ public class FlagIconTest {
 		Assert.assertEquals("de", FlagIcon.DE_GERMANY.getCountryCode());
 	}
 
+	@Test
+	public void getConstantName() throws Exception {
+		Assert.assertEquals("DE_GERMANY", FlagIcon.DE_GERMANY.getConstantName());
+	}
+
 
 }

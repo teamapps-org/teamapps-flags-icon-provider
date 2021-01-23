@@ -322,6 +322,7 @@ public class FlagIcon implements Icon<FlagIcon, Void> {
 	FlagIcon(String iconName, String constantName) {
 		this.iconName = iconName;
 		this.countryCode = iconName.substring(0, iconName.lastIndexOf('.'));
+		this.constantName = constantName;
 	}
 
 	public String getIconName() {
