@@ -2,14 +2,14 @@
  * ========================LICENSE_START=================================
  * TeamApps Flags Icon Provider
  * ---
- * Copyright (C) 2014 - 2019 TeamApps.org
+ * Copyright (C) 2014 - 2021 TeamApps.org
  * ---
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -22,9 +22,7 @@ package org.teamapps.icon.flags;
 import org.teamapps.icons.Icon;
 import org.teamapps.icons.spi.IconLibrary;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @IconLibrary(
 		name = "flag",
@@ -37,6 +35,7 @@ public class FlagIcon implements Icon<FlagIcon, Void> {
 
 	private static final Map<String, FlagIcon> iconByName = new HashMap<>();
 	private static final Map<String, FlagIcon> iconByCountryCode = new HashMap<>();
+	private static final List<FlagIcon> icons = new ArrayList<>();
 
 	public static final FlagIcon AD_ANDORRA = createInternal("ad.svg", "AD_ANDORRA");;
 	public static final FlagIcon AE_UNITED_ARAB_EMIRATES = createInternal("ae.svg", "AE_UNITED_ARAB_EMIRATES");;
@@ -300,7 +299,12 @@ public class FlagIcon implements Icon<FlagIcon, Void> {
 		FlagIcon icon = new FlagIcon(iconName, constantName);
 		iconByName.put(iconName, icon);
 		iconByCountryCode.put(icon.getCountryCode(), icon);
+		icons.add(icon);
 		return icon;
+	}
+
+	public static List<FlagIcon> getIcons() {
+		return icons;
 	}
 
 	public static FlagIcon getByNameOrNull(String name) {
