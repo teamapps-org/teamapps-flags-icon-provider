@@ -4,7 +4,7 @@
 
     <groupId>org.teamapps</groupId>
     <artifactId>teamapps-flags-icon-provider</artifactId>
-    <version>0.9.12-SNAPSHOT</version>
+    <version>0.9.12</version>
 
     <name>TeamApps Flags Icon Provider</name>
     <description>TeamApps Flags Icon Provider</description>
@@ -54,7 +54,7 @@
         <url>https://github.com/teamapps-org/teamapps-flags-icon-provider</url>
         <connection>scm:git:git@github.com:teamapps-org/teamapps-flags-icon-provider.git</connection>
         <developerConnection>scm:git:git@github.com:teamapps-org/teamapps-flags-icon-provider.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>v0.9.12</tag>
     </scm>
 
     <dependencies>
